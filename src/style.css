@@ -1,17 +1,11 @@
-.container{
-    padding: 20px 0px;
-    margin: 0px;
-    width: 100%;
-    background-color: rgb(116,152,225);
-}
+
 
 .weather{
-    width: 380px;
-    padding: 30px;
+    width: 370px;
+    /* padding: 30px; */
     border-radius: 10px;
     text-align: center;
     color: white;
-    margin: auto;
     background: linear-gradient(130deg, rgb(86,86,235),rgb(5,5,199));
 }
 
@@ -24,7 +18,6 @@
 .search input{
     border: none;
     outline: 0;
-    padding: 12px 25px;
     font-size: 18px;
     color: black;
     border-radius: 30px;
@@ -39,21 +32,25 @@
     height: 50px;
     border-radius: 50%;
     cursor: pointer;
+    background-color: rgb(222, 237, 243);
+
 }
 .search button img{
     width: 20px;
 }
 
 .winfo img{
-    margin-top: 20px;
+
+    margin-top: 10px;
     width: 170px;
 }
 .winfo h1{
-    font-size: 70px;
+    font-size: 56px;
     font-weight: 500;
     margin-top: 5px;
 }
 .winfo h2{
+    padding-top: 20px;
     font-size: 40px;
     font-weight: 400;
     margin-top: -40px;

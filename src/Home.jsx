@@ -9,7 +9,7 @@ const Home = () => {
         name: 'London',
         humidity: 10,
         speed: 2,
-        image: '../public/imgs/weather.png'
+        image: 'https://i.ibb.co/P5Mnr6y/weather.png'
     })
     const [name, setName] = useState('');
     const [error, setError] = useState('');
@@ -30,22 +30,22 @@ const Home = () => {
                 .then(res => {
                     let imagePath = '';
                     if (res.data.weather[0].main == "Clouds") {
-                        imagePath = "../public/imgs/cloud.png"
+                        imagePath = "https://i.ibb.co/1914V32/cloud.png"
                     }
                     else if (res.data.weather[0].main == "Clear") {
-                        imagePath = "../public/imgs/clear.png"
+                        imagePath = "https://i.ibb.co/hLKqp27/clear.png"
                     }
                     else if (res.data.weather[0].main == "Rain") {
-                        imagePath = "../public/imgs/rain.png"
+                        imagePath = "https://i.ibb.co/r5pZMMY/rain.png"
                     }
                     else if (res.data.weather[0].main == "Drizzle") {
-                        imagePath = "../public/imgs/drizzle.png"
+                        imagePath = "https://i.ibb.co/FzGLh6K/drizzle.png"
                     }
                     else if (res.data.weather[0].main == "Mist") {
-                        imagePath = "../public/imgs/mist.png"
+                        imagePath = "https://i.ibb.co/wd9wcTG/mist.png"
                     }
                     else {
-                        imagePath = "../public/imgs/weather.png"
+                        imagePath = "https://i.ibb.co/P5Mnr6y/weather.png"
                     }
                     setdata({ ...data, celcius: res.data.main.temp, name: res.data.name, humidity: res.data.main.humidity, speed: res.data.wind.speed, image: imagePath });
                     setError('');
@@ -63,17 +63,17 @@ const Home = () => {
     }
     return (
         <div>
-            <div className="container">
-                <div className="weather">
-                    <div className="search">
-                        <input onChange={e => setName(e.target.value)} type="text" placeholder="Enter City" />
-                        <button><img onClick={handleClick} src="../public/imgs/search.png" alt="" /></button>
+            <div className="bg-[rgb(116,152,225)] w-full h-full lg:h-[100vh] py-6">
+                <div className="weather p-0 md:p-8 mx-auto py-4 ">
+                    <div className="search  m-4 lg:m-0">
+                        <input className='py-3 px-5' onChange={e => setName(e.target.value)} type="text" placeholder="Enter City" />
+                        <button className='bg-white px-4 py-4'><img onClick={handleClick} src="https://i.ibb.co/M5Nc6rn/search.png" alt="" /></button>
                     </div>
                     <div className="winfo">
                         <div className="error">
                             {error}
                         </div>
-                        <img src={data.image} alt="" />
+                        <img className='mx-auto' src={data.image} alt="" />
                         <h1>{Math.round(data.celcius)}°C</h1>
                         {/* <h1>{data.celcius}°C</h1> */}
                         <h2>{data.name}</h2>
@@ -81,14 +81,14 @@ const Home = () => {
                         <div className="details">
                             <div className="col">
 
-                                <img src="../public/imgs/humidity.png" alt="" />
+                                <img src="https://i.ibb.co/Fg4DzXv/humidity.png" alt="" />
                                 <div>
                                     <p>{Math.round(data.humidity)}%</p>
                                     <p>Humidity</p>
                                 </div>
                             </div>
                             <div className="col">
-                                <img src="../public/imgs/wind.png" alt="" />
+                                <img src="https://i.ibb.co/xMtRRLk/wind.png" alt="" />
                                 <div>
                                     <p>{Math.round(data.speed)} Km/p</p>
                                     <p>Wind</p>
